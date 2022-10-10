@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import outils.Exercice;
 import outils.ExerciceRunner;
 import outils.Question;
+import outils.Resultat;
 
 /**
  * Ne modifiez ni les noms des classes, ni les noms des méthodes. Utilisez
@@ -28,8 +29,12 @@ public class Ex12_FirstLast {
 	 */
 	@Test
 	@Question(numero = 1)
-	public void afficherAlgo() {
-
+	public void afficherAlgo()  throws Exception{
+		
+		for (int i=1; i<=4; i++) {
+            int[] tab = (int[])this.getClass().getDeclaredField("tab"+i).get(this);
+            Resultat.log(tab.length>=1 && (tab[0] ==tab[tab.length-1]) );
+        }
 		// TODO Calculez une valeur booléenne qui contrôle le tableau de la sorte :
 		// o elle vaut true si le tableau est de longueur supérieure ou égale à 1 
 		//   et que le premier et le dernier élément du tableau ont la même valeur

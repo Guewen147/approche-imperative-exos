@@ -26,13 +26,27 @@ public class Ex18_InteractifPlusGrand {
 	@Test
 	@Question(numero = 1)
 	public void interactif() {
+		int[] plusGrand = new int[10];
+		int maxVal = Integer.MIN_VALUE;
+		
 		
 		Scanner scanner = new Scanner(System.in) ;
-		
 		// TODO Demander à l'utilisateur de saisir 10 nombres entiers
 		// TODO Affichez chaque nombre saisi avec Resultat.log
 		// TODO Enfin affichez avec Resultat.log le max des 10 nombres
 	
+		for (int i=0; i<=9; i++) {
+			System.out.println("Veuillez saisir un nombre : ");
+			int nombre = scanner.nextInt();
+			Resultat.log(nombre);
+			plusGrand[i] = nombre ;
+			}
+		for(int i = 0; i < plusGrand.length; i++){
+	         if(plusGrand[i] > maxVal)
+	           maxVal = plusGrand[i];
+		}
+		System.out.println("Voici le nombre le plus grand saisie1: ");
+		Resultat.log(maxVal);
 		
 		scanner.close();
 	}

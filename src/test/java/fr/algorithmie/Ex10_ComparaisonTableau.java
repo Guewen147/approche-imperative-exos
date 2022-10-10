@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import outils.Exercice;
 import outils.ExerciceRunner;
 import outils.Question;
+import outils.Resultat;
 
 /**
  * Ne modifiez ni les noms des classes, ni les noms des méthodes.
@@ -20,7 +21,8 @@ public class Ex10_ComparaisonTableau {
 
 	int[] array1 = { 1, 15, -3, 8, 7, 4, -2, 28, -1, 17, 2, 3, 0, 14, -4 };
 	int[] array2 = { 3, -8, 17, 5, -1, 4, 0, 6, 2, 11, -5, -4, 8 };
-
+	int commune = 0;
+	
 	/**
 	 * Ne pas modifier les informations portées par l'annotation
 	 */
@@ -31,5 +33,17 @@ public class Ex10_ComparaisonTableau {
 		// TODO LOGUER le nombre de valeurs communes aux 2 tableaux.
 		// Exemple : On peut déjà voir que les valeurs 3 et 8 sont communes aux 2 tableaux, mais
 		// Combien y en a t'il au total ?
+	
+		for (int i1=0; i1 <=array1.length-1; i1++) {
+			
+			for (int i2=0; i2 <=array2.length-1; i2++) {
+				
+				if(array1[i1] == array2[i2]) {
+				commune++;
+				}
+			}
+		
+		}
+		Resultat.log(commune);
 	}
 }
