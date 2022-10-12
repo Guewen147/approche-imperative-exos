@@ -28,9 +28,15 @@ public class Ex05_InversionContenu {
 		// TODO Créer un tableau nommé arrayCopy et qui contient les mêmes nombres
 		// que dans le tableau array mais dans l'ordre inverse. 
 		// Pour être plus précis, arrayCopy commence par les nombres suivants : -4, 14, 0, etc..
+		int[] arrayCopy = new int[array.length];
 		
-		int[] arrayCopy = Arrays.copyOf(array, array.length);
-		for ( int n=arrayCopy.length-1; n>=0; n-- ) {
+		for (int i = 0; i < array.length / 2; i++) {
+			arrayCopy[i] = array[i];
+			array[i] = array[array.length - 1 - i];
+			array[array.length -1 - i ]= arrayCopy[i];
+		}
+		arrayCopy = Arrays.copyOf(array, array.length);
+		for ( int n=0; n < arrayCopy.length; n++) {
 		
 		Resultat.log( arrayCopy [n]);
 		
